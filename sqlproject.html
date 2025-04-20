@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL Query Generation with Fine-Tuned Language Model - Manjunath L</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <style>
+        /* Additional styles for project page */
+        .project-header {
+            padding: 150px 0 50px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            text-align: center;
+        }
+        
+        .project-header h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+        
+        .project-meta {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .project-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text);
+        }
+        
+        .project-content-section {
+            padding: 80px 0;
+        }
+        
+        .project-content-section:nth-child(even) {
+            background-color: var(--secondary);
+        }
+        
+        .project-section-title {
+            font-size: 28px;
+            margin-bottom: 30px;
+            color: var(--accent);
+        }
+        
+        .project-image {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin: 30px 0;
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 30px 0;
+        }
+        
+        .tech-item {
+            background-color: var(--secondary);
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .project-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .gallery-item {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .project-nav {
+            display: flex;
+            justify-content: space-between;
+            padding: 40px 0;
+            border-top: 1px solid #eee;
+        }
+        
+        .nav-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-btn:hover {
+            color: var(--highlight);
+        }
+        
+        .project-insights {
+            background-color: var(--primary);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin: 30px 0;
+        }
+        
+        .insight-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .insight-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .insight-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: var(--highlight);
+            flex-shrink: 0;
+        }
+        
+        .insight-content {
+            flex: 1;
+        }
+        
+        .insight-title {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--accent);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="navbar">
+                <a href="index.html" class="logo">Manju<span>nath</span></a>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#skills">Skills</a></li>
+                    <li><a href="index.html#experience">Experience</a></li>
+                    <li><a href="index.html#projects">Projects</a></li>
+                    <li><a href="index.html#education">Education</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                <div class="nav-toggle" id="navToggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Project Header -->
+    <section class="project-header">
+        <div class="container">
+            <h1>SQL Query Generation with Fine-Tuned Language Model</h1>
+            <div class="project-meta">
+                <div class="project-meta-item">
+                    <i class="fas fa-calendar"></i>
+                    <span>Progress: On-going </span>
+                </div>
+                <div class="project-meta-item">
+                    <i class="fas fa-tag"></i>
+                    <span>Category: Machine Learning</span>
+                </div>
+                <div class="project-meta-item">
+                    <i class="fas fa-code-branch"></i>
+                    <span>Platform: Hugging Face</span>
+                </div>
+            </div>
+            <div class="cta-buttons">
+                <a href="https://huggingface.co/Manju080" class="btn btn-primary">
+                    <i class="fab fa-huggingface"></i> View on Hugging Face
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Overview -->
+    <section class="project-content-section">
+        <div class="container">
+            <h2 class="project-section-title">Project Overview</h2>
+            <p>In this cutting-edge machine learning project, I fine-tuned the <code>defog/sqlcoder-1b</code> model on the WikiSQL dataset to generate precise SQL queries from natural language questions. By leveraging LoRA and 4-bit quantization, I optimized training efficiency, enabling robust performance within a 2–3 hour window on GPU hardware. This solution enhances data querying for analysts and developers, delivering accurate SQL outputs that streamline database interactions. My work showcases advanced NLP techniques and efficient model training, paving the way for intelligent query generation in data-driven applications.</p>
+            
+            <!-- <img src="assets/images/sqlcoder-overview.png" alt="SQL Query Generation Workflow" class="project-image"> -->
+            
+            <h3>Project Objectives:</h3>
+            <ul>
+                <li>Fine-tune <code>sqlcoder-1b</code> to generate accurate SQL queries from natural language inputs.</li>
+                <li>Optimize training with LoRA and 4-bit quantization for efficiency on limited hardware.</li>
+                <li>Preprocess WikiSQL dataset into prompt pairs for effective model training.</li>
+                <li>Evaluate model performance to ensure reliable query generation.</li>
+                <li>Produce a deployable model for real-world data querying applications.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Technology Stack -->
+    <section class="project-content-section">
+        <div class="container">
+            <h2 class="project-section-title">Technology Stack</h2>
+            <p>This project utilized a powerful suite of machine learning and NLP tools to achieve efficient model fine-tuning:</p>
+            
+            <div class="tech-stack">
+                <div class="tech-item">
+                    <i class="fas fa-code"></i> PyTorch
+                </div>
+                <div class="tech-item">
+                    <i class="fas fa-robot"></i> Transformers
+                </div>
+                <div class="tech-item">
+                    <i class="fas fa-cogs"></i> PEFT
+                </div>
+                <div class="tech-item">
+                    <i class="fas fa-brain"></i> Parameter-efficient Fine-tuning (LoRA)
+                </div>
+            </div>
+            
+            <h3>Architecture Diagram:</h3>
+            <!-- <img src="assets/images/sqlcoder-architecture.png" alt="SQL Query Generation Architecture Diagram" class="project-image"> -->
+            <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
+            <div class="mermaid">
+                graph TD
+                A[WikiSQL Dataset<br>Questions & SQL Queries] -->|Load| B[Data Preprocessing]
+                B -->|Format Prompt Pairs| C[Tokenization<br>Max Length: 512]
+                C -->|Tokenized Inputs| D[Fine-Tuning<br>sqlcoder-1b]
+                D -->|LoRA, 4-bit Quantization| E[Trained Model]
+                E -->|Generate| F[SQL Query Output]
+                D -->|Evaluate| G[Validation<br>1,000 Samples]
+                G -->|Metrics| H[Model Performance]
+            </div>
+            <p>The workflow begins with loading the WikiSQL dataset, followed by preprocessing into prompt pairs. The <code>sqlcoder-1b</code> model is fine-tuned with LoRA and 4-bit quantization, tokenized inputs are processed, and the trained model generates SQL queries from natural language questions.</p>
+        </div>
+    </section>
+
+    <!-- Implementation Details -->
+    <section class="project-content-section">
+        <div class="container">
+            <h2 class="project-section-title">Implementation Details</h2>
+            
+            <h3>Data Preprocessing</h3>
+            <p>Loaded the WikiSQL dataset using the <code>datasets</code> library, extracting natural language questions and their corresponding SQL queries. Formatted the data into prompt pairs (e.g., “### Question: ... ### SQL: ...”) to align with the model’s input requirements, ensuring effective training.</p>
+            
+            <h3>Model Setup</h3>
+            <p>Utilized the <code>defog/sqlcoder-1b</code> model, loaded with 4-bit quantization via <code>bitsandbytes</code> to reduce memory usage. Applied LoRA using the <code>peft</code> library, targeting <code>q_proj</code> and <code>v_proj</code> modules with rank 8 and alpha 16, minimizing trainable parameters for efficiency.</p>
+            
+            <h3>Tokenization</h3>
+            <p>Tokenized prompt pairs using the model’s tokenizer, setting a maximum length of 512 tokens to balance query complexity and computational constraints. Applied truncation and padding to ensure consistent input sizes for training and validation.</p>
+            
+            <h3>Training</h3>
+            <p>Is still under progress: Training the model on 8,000 training samples and 1,000 validation samples for 1 epoch using the Hugging Face <code>Trainer</code> API. Configured training with a batch size of 2, learning rate of 2e-4, and FP16 precision, saving checkpoints every 100 steps and evaluating performance every 50 steps.</p>
+            
+            <!-- <div class="project-gallery">
+                <div class="gallery-item">
+                    <img src="assets/images/sqlcoder-code.png" alt="Fine-Tuning Code Snippet">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/sqlcoder-output.png" alt="Sample SQL Query Output">
+                </div>
+            </div> -->
+        </div>
+    </section>
+
+    <!-- Key Outcomes -->
+    <section class="project-content-section">
+        <div class="container">
+            <h2 class="project-section-title">Key Outcomes</h2>
+            
+            <div class="project-insights">
+                <div class="insight-item">
+                    <div class="insight-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="insight-content">
+                        <h3 class="insight-title">Enhanced Query Accuracy</h3>
+                        <p>Fine-tuned <code>sqlcoder-1b</code> to generate precise SQL queries, improving reliability for data querying tasks.</p>
+                    </div>
+                </div>
+                
+                <div class="insight-item">
+                    <div class="insight-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <div class="insight-content">
+                        <h3 class="insight-title">Training Efficiency</h3>
+                        <p>Optimized training with LoRA and 4-bit quantization, completing fine-tuning within 2–3 hours on GPU hardware.</p>
+                    </div>
+                </div>
+                
+                <div class="insight-item">
+                    <div class="insight-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <div class="insight-content">
+                        <h3 class="insight-title">Deployable Model</h3>
+                        <p>Is still under progress</p>
+                    </div>
+                </div>
+            </div>
+            
+            <p>This project demonstrates advanced NLP expertise, delivering a scalable solution that empowers data analysts and developers to query databases effortlessly.</p>
+        </div>
+    </section>
+
+    <!-- Challenges & Solutions -->
+    <section class="project-content-section">
+        <div class="container">
+            <h2 class="project-section-title">Challenges & Solutions</h2>
+            
+            <h3>GPU Memory Constraints</h3>
+            <p><strong>Challenge:</strong> Fine-tuning a 1B-parameter model on limited GPU memory risked out-of-memory errors.</p>
+            <p><strong>Solution:</strong> Applied 4-bit quantization and LoRA to reduce memory footprint, enabling efficient training with minimal parameter updates.</p>
+            
+            <h3>Tokenization Limits</h3>
+            <p><strong>Challenge:</strong> Ensuring complex SQL queries fit within a 512-token limit without losing critical information.</p>
+            <p><strong>Solution:</strong> Carefully designed prompt formatting and truncation strategies to preserve query structure and context.</p>
+            
+            <h3>Training Speed vs. Performance</h3>
+            <p><strong>Challenge:</strong> Balancing training speed with model accuracy within a 2–3 hour window.</p>
+            <p><strong>Solution:</strong> Limited training to 8,000 samples and used FP16 precision, achieving robust performance in a single epoch.</p>
+        </div>
+    </section>
+
+    <!-- Project Navigation -->
+    <div class="container">
+        <div class="project-nav">
+            <a href="zomato-project.html" class="nav-btn">
+                <i class="fas fa-arrow-left"></i>
+                Previous Project
+            </a>
+            <a href="index.html#projects" class="nav-btn">
+                <i class="fas fa-th"></i>
+                All Projects
+            </a>
+            <!-- <a href="#" class="nav-btn">
+                Next Project
+                <i class="fas fa-arrow-right"></i>
+            </a> -->
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">Manjunath L</div>
+                    <p>Data Analyst | Azure Certified | Machine Learning Enthusiast</p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/manjunath-l-4771a6202/"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/Manju080"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html#about">About Me</a></li>
+                        <li><a href="index.html#skills">My Skills</a></li>
+                        <li><a href="index.html#experience">Experience</a></li>
+                        <li><a href="index.html#projects">Projects</a></li>
+                        <li><a href="index.html#contact">Contact Me</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Bangalore, India</li>
+                        <li><i class="fas fa-phone"></i> +918073090980</li>
+                        <li><i class="fas fa-envelope"></i> manjutejas188@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                © 2025 Manjunath L. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

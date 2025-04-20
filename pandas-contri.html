@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pandas Open-Source Contributions - Manjunath L</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <style>
+        /* Additional styles for contributions page */
+        .contributions-header {
+            padding: 150px 0 50px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            text-align: center;
+        }
+        
+        .contributions-header h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+        
+        .contributions-meta {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .contributions-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text);
+        }
+        
+        .contributions-content-section {
+            padding: 80px 0;
+        }
+        
+        .contributions-content-section:nth-child(even) {
+            background-color: var(--secondary);
+        }
+        
+        .contributions-section-title {
+            font-size: 28px;
+            margin-bottom: 30px;
+            color: var(--accent);
+        }
+        
+        .contributions-image {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin: 30px 0;
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 30px 0;
+        }
+        
+        .tech-item {
+            background-color: var(--secondary);
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .contributions-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .gallery-item {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .contributions-nav {
+            display: flex;
+            justify-content: space-between;
+            padding: 40px 0;
+            border-top: 1px solid #eee;
+        }
+        
+        .nav-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-btn:hover {
+            color: var(--highlight);
+        }
+        
+        .contributions-insights {
+            background-color: var(--primary);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin: 30px 0;
+        }
+        
+        .insight-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .insight-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .insight-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: var(--highlight);
+            flex-shrink: 0;
+        }
+        
+        .insight-content {
+            flex: 1;
+        }
+        
+        .insight-title {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--accent);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="navbar">
+                <a href="index.html" class="logo">Manju<span>nath</span></a>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#skills">Skills</a></li>
+                    <li><a href="index.html#experience">Experience</a></li>
+                    <li><a href="index.html#projects">Projects</a></li>
+                    <li><a href="index.html#education">Education</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                <div class="nav-toggle" id="navToggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contributions Header -->
+    <section class="contributions-header">
+        <div class="container">
+            <h1>Pandas Open-Source Contributions</h1>
+            <div class="contributions-meta">
+                <!-- <div class="contributions-meta-item">
+                    <i class="fas fa-calendar"></i>
+                    <span>Contributed: Mar - Apr 2025</span>
+                </div> -->
+                <div class="contributions-meta-item">
+                    <i class="fas fa-tag"></i>
+                    <span>Category: Open-Source</span>
+                </div>
+                <div class="contributions-meta-item">
+                    <i class="fas fa-code-branch"></i>
+                    <span>Project: Pandas</span>
+                </div>
+            </div>
+            <div class="cta-buttons">
+                <a href="https://github.com/pandas-dev/pandas" class="btn btn-primary">
+                    <i class="fab fa-github"></i> Git Repository
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contributions Overview -->
+    <section class="contributions-content-section">
+        <div class="container">
+            <h2 class="contributions-section-title">Contributions Overview</h2>
+            <p>My contributions to Pandas, a pivotal library in Python’s data science ecosystem, address critical usability and reliability issues, enhancing the experience for millions of users. I resolved a documentation gap in <code>Index.values</code> that risked segmentation faults by clarifying unsafe modification practices, aligning with Pandas 3.0’s Copy-on-Write mode. Additionally, I’m tackling a bug in <code>StringArray</code> creation, ensuring consistent handling of complex string inputs to prevent ambiguous data transformations. Through meticulous code changes, robust pytest tests, and collaborative refinements with maintainers, my work strengthens Pandas’ robustness for data-intensive workflows.</p>
+            
+            <!-- <img src="assets/images/pandas-contributions.png" alt="Pandas Contribution Workflow" class="contributions-image"> -->
+            
+            <h3>Contribution Objectives:</h3>
+            <ul>
+                <li>Update <code>Index.values</code> docstring to warn against direct modification, preventing segmentation faults and aligning with Pandas 3.0.</li>
+                <li>Fix <code>StringArray</code> creation to raise clear errors for inconsistent list inputs, ensuring predictable behavior.</li>
+                <li>Develop rigorous pytest test cases to validate fixes across diverse scenarios.</li>
+                <li>Enhance documentation with clear guidance on safe practices and version changes.</li>
+                <li>Improve Pandas’ reliability for data scientists handling complex datasets.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Contribution Details -->
+    <section class="contributions-content-section">
+        <div class="container">
+            <h2 class="contributions-section-title">Contribution Details</h2>
+            
+            <h3>Pull Request #61069: DOC: Update warning in <code>Index.values</code> docstring</h3>
+            <p><strong>Problem:</strong> <code>Index.values</code> lacked a clear warning that modifying the returned array directly could cause memory corruption or segmentation faults, risking crashes in user workflows.</p>
+            <p><strong>Solution:</strong> Updated the docstring to explicitly warn against modification, recommend safe alternatives (<code>Index.array</code>, <code>Index.to_numpy(copy=True)</code>), and note that Pandas 3.0’s Copy-on-Write mode makes the array read-only. Added test cases and fixed formatting issues.</p>
+            <p><strong>Status:</strong> Merged on March 11, 2025. <a href="https://github.com/pandas-dev/pandas/pull/61069">View PR</a></p>
+            
+            <h3>Pull Request #61263: BUG: Impossible creation of array with <code>dtype=string</code></h3>
+            <p><strong>Problem:</strong> Creating a <code>StringArray</code> from lists of lists with inconsistent lengths or non-character elements led to ambiguous behavior, confusing users expecting clear errors or joined strings.</p>
+            <p><strong>Solution:</strong> Modified <code>ensure_string_array</code> in <code>pandas._libs.lib.pyx</code> to raise a <code>ValueError</code> for invalid inputs, ensuring a 1D result. Added pytest test cases to validate handling of complex inputs.</p>
+            <p><strong>Status:</strong> Open, under review as of April 2025. <a href="https://github.com/pandas-dev/pandas/pull/61263">View PR</a></p>
+            
+            <div class="contributions-gallery">
+                <!-- <div class="gallery-item">
+                    <img src="assets/images/pr-61069-screenshot.png" alt="PR #61069 Docstring Changes">
+                </div> -->
+                <!-- <div class="gallery-item">
+                    <img src="assets/images/pr-61263-screenshot.png" alt="PR #61263 Code and Test Cases">
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Details -->
+    <section class="contributions-content-section">
+        <div class="container">
+            <h2 class="contributions-section-title">Technical Details</h2>
+            <p>These contributions involved working with the Pandas codebase, focusing on its core data structures and type handling. The changes were implemented in Python, leveraging Pandas’ internal APIs and testing frameworks.</p>
+            
+            <div class="tech-stack">
+                <div class="tech-item">
+                    <i class="fas fa-code"></i> Python
+                </div>
+                <div class="tech-item">
+                    <i class="fas fa-table"></i> Pandas
+                </div>
+                <div class="tech-item">
+                    <i class="fas fa-vial"></i> Pytest
+                </div>
+                <div class="tech-item">
+                    <i class="fab fa-github"></i> GitHub
+                </div>
+                <div class="tech-item">
+                    <i class="fas fa-book"></i> Documentation
+                </div>
+            </div>
+            
+            <h3>Workflow:</h3>
+            <p>The contributions followed Pandas’ open-source workflow:</p>
+            <ul>
+                <li>Forked the Pandas repository and created feature branches.</li>
+                <li>Implemented changes in Python, modifying relevant modules (e.g., <code>concat.py</code>, <code>index.py</code>).</li>
+                <li>Added test cases using Pytest to validate functionality.</li>
+                <li>Updated documentation in Sphinx format.</li>
+                <li>Submitted pull requests, addressed reviewer feedback, and ensured CI/CD compliance.</li>
+            </ul>
+            
+            <!-- <img src="assets/images/pandas-workflow.png" alt="Pandas Contribution Workflow" class="contributions-image"> -->
+        </div>
+    </section>
+
+    <!-- Contribution Impact -->
+    <section class="contributions-content-section">
+        <div class="container">
+            <h2 class="contributions-section-title">Contribution Impact</h2>
+            
+            <div class="contributions-insights">
+                <div class="insight-item">
+                    <div class="insight-icon">
+                        <i class="fas fa-bug"></i>
+                    </div>
+                    <div class="insight-content">
+                        <h3 class="insight-title">Improved Reliability</h3>
+                        <p>Fixed bugs in <code>pd.concat</code> and <code>Index.map</code>, reducing errors for users working with nullable dtypes, especially in large-scale data processing.</p>
+                    </div>
+                </div>
+                
+                <div class="insight-item">
+                    <div class="insight-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="insight-content">
+                        <h3 class="insight-title">Community Benefit</h3>
+                        <p>Enhanced Pandas’ usability for data scientists, making it more robust for handling modern datasets with missing values.</p>
+                    </div>
+                </div>
+                
+                <div class="insight-item">
+                    <div class="insight-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="insight-content">
+                        <h3 class="insight-title">Code Quality</h3>
+                        <p>Added comprehensive test cases and documentation, improving Pandas’ maintainability and user trust.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <p>These contributions have been integrated into Pandas releases, benefiting thousands of users worldwide who rely on the library for data analysis.</p>
+        </div>
+    </section>
+
+    <!-- Lessons Learned -->
+    <section class="contributions-content-section">
+        <div class="container">
+            <h2 class="contributions-section-title">Lessons Learned</h2>
+            <p>Contributing to Pandas provided valuable insights into open-source development:</p>
+            <ul>
+                <li><strong>Codebase Navigation:</strong> Learned to navigate and modify a large, complex codebase like Pandas.</li>
+                <li><strong>Testing Rigor:</strong> Gained experience writing robust test cases to ensure code stability.</li>
+                <li><strong>Community Collaboration:</strong> Improved skills in communicating with maintainers and addressing reviewer feedback.</li>
+                <li><strong>Documentation:</strong> Understood the importance of clear documentation for user adoption.</li>
+                <li><strong>Nullable Dtypes:</strong> Deepened knowledge of Pandas’ nullable dtype system and its challenges.</li>
+            </ul>
+            <p>These experiences have strengthened my skills as a Python developer and open-source contributor, preparing me for future contributions to data science libraries.</p>
+        </div>
+    </section>
+
+    <!-- Contributions Navigation -->
+    <div class="container">
+        <div class="contributions-nav">
+            <!-- <a href="#" class="nav-btn">
+                <i class="fas fa-arrow-left"></i>
+                Previous Project
+            </a> -->
+            <a href="index.html#projects" class="nav-btn">
+                <i class="fas fa-th"></i>
+                All Projects
+            </a>
+            <a href="zomato-project.html" class="nav-btn">
+                Next Project
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">Manjunath L</div>
+                    <p>Data Analyst | Azure Certified | Machine Learning Enthusiast</p>
+                    <div class="social-links">
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/manjunath-l-4771a6202/"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://github.com/Manju080"><i class="fab fa-github"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html#about">About Me</a></li>
+                        <li><a href="index.html#skills">My Skills</a></li>
+                        <li><a href="index.html#experience">Experience</a></li>
+                        <li><a href="index.html#projects">Projects</a></li>
+                        <li><a href="manjutejas188@gmail.com">Contact Me</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Bangalore, India</li>
+                        <li><i class="fas fa-phone"></i> +918073090980</li>
+                        <li><i class="fas fa-envelope"></i> manjutejas188@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                © 2025 Manjunath L. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
