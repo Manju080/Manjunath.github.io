@@ -104,15 +104,118 @@ header {
     color: var(--text);
 }
 
+.profile-container {
+    position: relative;
+    width: 280px;
+    height: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 30px;
+}
+
 .hero-img {
     width: 180px;
     height: 180px;
     border-radius: 50%;
-    margin: 0 auto 30px;
     object-fit: cover;
+    z-index: 10;
+    position: relative;
     border: 5px solid var(--primary);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
+
+.orbit {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    animation: revolve 12s linear infinite;
+}
+
+.glass-button {
+    position: absolute;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(25px) saturate(200%);
+    -webkit-backdrop-filter: blur(25px) saturate(200%);
+    border: 1px solid rgba(255, 182, 193, 0.8);
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.5), 0 8px 32px rgba(0, 0, 0, 0.1), 0 0 10px rgba(255, 182, 193, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 12px;
+    animation: counter-revolve 12s linear infinite;
+    text-decoration: none;
+    transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-button:hover {
+    background: rgba(0, 0, 0, 0.1);
+    border-color: rgba(255, 105, 180, 1);
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.8), 0 8px 32px rgba(0, 0, 0, 0.2), 0 0 25px rgba(255, 105, 180, 0.9), inset 0 0 15px rgba(255, 105, 180, 0.5);
+}
+
+.button1 {
+    top: 0;
+    left: 50%;
+    margin-left: -32.5px;
+    margin-top: -32.5px;
+}
+
+.button2 {
+    top: 50%;
+    left: 50%;
+    margin-top: 38px;
+    margin-left: 89px;
+}
+
+.button3 {
+    top: 50%;
+    left: 50%;
+    margin-top: 38px;
+    margin-left: -154px;
+}
+
+.profile-container:hover .orbit,
+.profile-container:hover .glass-button,
+.glass-button:hover {
+    animation-play-state: paused !important;
+    -webkit-animation-play-state: paused !important;
+}
+
+.glass-button img {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+}
+
+.agent-text {
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.agent-icon {
+    font-size: 20px;
+    margin-bottom: 3px;
+}
+
+@keyframes revolve {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes counter-revolve {
+    from { transform: rotate(360deg); }
+    to { transform: rotate(0deg); }
+}
+
 
 .cta-buttons {
     display: flex;
