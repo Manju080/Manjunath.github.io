@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Portfolio Risk Advisor - Manjunath L</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <style>
+        /* Additional styles for project details page */
+        .contributions-header {
+            padding: 150px 0 50px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            text-align: center;
+        }
+
+        .contributions-header h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+
+        .contributions-meta {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .contributions-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text);
+        }
+
+        .contributions-content-section {
+            padding: 80px 0;
+        }
+
+        .contributions-content-section:nth-child(even) {
+            background-color: var(--secondary);
+        }
+
+        .contributions-section-title {
+            font-size: 28px;
+            margin-bottom: 30px;
+            color: var(--accent);
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .tech-item {
+            background-color: var(--secondary);
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .contributions-nav {
+            display: flex;
+            justify-content: space-between;
+            padding: 40px 0;
+            border-top: 1px solid #eee;
+        }
+
+        .nav-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            color: var(--highlight);
+        }
+
+        .contributions-insights {
+            background-color: var(--primary);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin: 30px 0;
+        }
+
+        .insight-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .insight-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .insight-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: var(--highlight);
+            flex-shrink: 0;
+        }
+
+        .insight-content {
+            flex: 1;
+        }
+
+        .insight-title {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--accent);
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .contributions-content-section ul {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .contributions-content-section li {
+            margin-bottom: 12px;
+            line-height: 1.6;
+            color: var(--text);
+        }
+
+        .contributions-content-section p {
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: var(--text);
+        }
+
+        /* Architecture Flow & Grid Styles */
+        .architecture-flow {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: var(--primary, #ffffff);
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .flow-stage {
+            text-align: center;
+            flex: 1;
+            min-width: 140px;
+            position: relative;
+        }
+
+        .flow-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--secondary, #f8f9fa);
+            color: var(--highlight, #007bff);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            margin: 0 auto 15px;
+            box-shadow: inset 0 3px 10px rgba(0, 0, 0, 0.05);
+            border: 2px solid #eee;
+            transition: transform 0.3s ease;
+        }
+
+        .flow-stage:hover .flow-icon {
+            transform: scale(1.1);
+            border-color: var(--highlight, #007bff);
+        }
+
+        .flow-stage h4 {
+            margin: 0 0 8px;
+            color: var(--accent, #333);
+            font-size: 18px;
+        }
+
+        .flow-stage p {
+            margin: 0;
+            font-size: 14px;
+            color: var(--text, #666);
+            line-height: 1.4;
+        }
+
+        .flow-arrow {
+            color: var(--highlight, #007bff);
+            font-size: 24px;
+            opacity: 0.6;
+        }
+
+        @media (max-width: 768px) {
+            .architecture-flow {
+                flex-direction: column;
+            }
+
+            .flow-arrow {
+                transform: rotate(90deg);
+                margin: 10px 0;
+            }
+        }
+
+        .orchestration-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .orchestration-card {
+            background: var(--primary, #ffffff);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-top: 4px solid var(--highlight, #007bff);
+            transition: transform 0.3s ease;
+        }
+
+        .orchestration-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .orchestration-card h3 {
+            color: var(--accent, #333);
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .orchestration-card ul {
+            padding-left: 20px;
+            margin: 0;
+        }
+
+        .orchestration-card li {
+            margin-bottom: 15px;
+            line-height: 1.6;
+            color: var(--text, #555);
+        }
+
+        .orchestration-card li strong {
+            color: var(--accent, #333);
+        }
+
+        /* Live Demo Section */
+        .demo-banner {
+            background: linear-gradient(135deg, var(--highlight, #007bff) 0%, #6f42c1 100%);
+            border-radius: 20px;
+            padding: 50px 40px;
+            text-align: center;
+            margin: 30px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .demo-banner::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 60%);
+            animation: pulse-glow 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 1; }
+        }
+
+        .demo-banner h3 {
+            font-size: 28px;
+            color: #fff;
+            margin-bottom: 12px;
+            position: relative;
+        }
+
+        .demo-banner p {
+            color: rgba(255,255,255,0.85);
+            font-size: 16px;
+            max-width: 600px;
+            margin: 0 auto 30px;
+            position: relative;
+        }
+
+        .demo-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #fff;
+            color: var(--highlight, #007bff);
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 16px;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .demo-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+        }
+
+        .demo-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .demo-feature-card {
+            background: var(--primary);
+            border-radius: 12px;
+            padding: 24px 20px;
+            text-align: center;
+            border: 1px solid rgba(0,0,0,0.06);
+            transition: transform 0.3s ease;
+        }
+
+        .demo-feature-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .demo-feature-card i {
+            font-size: 32px;
+            color: var(--highlight);
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .demo-feature-card h4 {
+            font-size: 15px;
+            margin: 0 0 6px;
+            color: var(--accent);
+        }
+
+        .demo-feature-card p {
+            font-size: 13px;
+            color: var(--text);
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        /* Workflow Section */
+        .workflow-steps {
+            position: relative;
+            margin: 40px 0;
+        }
+
+        .workflow-step {
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .workflow-step:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 24px;
+            top: 58px;
+            width: 2px;
+            height: calc(100% - 10px);
+            background: linear-gradient(to bottom, var(--highlight), transparent);
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            min-width: 50px;
+            border-radius: 50%;
+            background: var(--highlight);
+            color: #fff;
+            font-size: 20px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            position: relative;
+            z-index: 1;
+        }
+
+        .step-body {
+            background: var(--primary);
+            border-radius: 14px;
+            padding: 24px 28px;
+            flex: 1;
+            border-left: 4px solid var(--highlight);
+            box-shadow: 0 3px 12px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .step-body:hover {
+            transform: translateX(6px);
+        }
+
+        .step-body h4 {
+            font-size: 18px;
+            color: var(--accent);
+            margin: 0 0 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .step-body h4 i {
+            color: var(--highlight);
+        }
+
+        .step-body p {
+            margin: 0 0 10px;
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        .step-body ul {
+            padding-left: 18px;
+            margin: 0;
+        }
+
+        .step-body li {
+            color: var(--text);
+            line-height: 1.6;
+            margin-bottom: 6px;
+            font-size: 14px;
+        }
+
+        .step-tag {
+            display: inline-block;
+            background: rgba(0,123,255,0.1);
+            color: var(--highlight);
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-top: 8px;
+        }
+
+        /* Iframe Embed */
+        .demo-iframe-wrapper {
+            position: relative;
+            margin: 30px 0;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            border: 2px solid rgba(0,123,255,0.25);
+        }
+
+        .demo-iframe-wrapper iframe {
+            width: 100%;
+            height: 700px;
+            border: none;
+            display: block;
+        }
+
+        .iframe-overlay-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: var(--secondary);
+            padding: 10px 20px;
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+        }
+
+        .iframe-overlay-bar span {
+            font-size: 13px;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .iframe-overlay-bar span i {
+            color: #28a745;
+        }
+
+        .iframe-open-btn {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--highlight);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: opacity 0.2s;
+        }
+
+        .iframe-open-btn:hover {
+            opacity: 0.7;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="navbar">
+                <a href="index.html" class="logo">Manju<span>nath</span></a>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#skills">Skills</a></li>
+                    <li><a href="index.html#experience">Experience</a></li>
+                    <li><a href="index.html#projects">Projects</a></li>
+                    <li><a href="index.html#education">Education</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                <div class="nav-toggle" id="navToggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Project Header -->
+    <section class="contributions-header">
+        <div class="container">
+            <h1>Agentic Portfolio Risk Advisor</h1>
+            <div class="contributions-meta">
+                <div class="contributions-meta-item">
+                    <i class="fas fa-tag"></i>
+                    <span>Category: AI Financial Engineering & Agentic Systems</span>
+                </div>
+                <div class="contributions-meta-item">
+                    <i class="fas fa-code-branch"></i>
+                    <span>Role: AI Systems Architect & Lead Developer</span>
+                </div>
+            </div>
+            <div class="cta-buttons">
+                <a href="https://github.com/Manju080/Risk_Analysis_Agent" class="btn btn-primary" target="_blank">
+                    <i class="fab fa-github"></i> View Repository
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section class="contributions-content-section">
+        <div class="container">
+            <h2 class="contributions-section-title">Platform Overview</h2>
+            <p>The <strong>Agentic Portfolio Risk Advisor</strong> is a multi-agent LLM ecosystem designed for real-time
+                quantitative risk modeling, financial news intelligence, and automated portfolio synthesis specifically
+                tailored for Indian equities traded on the National Stock Exchange (NSE) and Bombay Stock Exchange
+                (BSE).</p>
+
+            <p>Standard portfolio tracking tools rely either solely on mathematical metrics without situational context
+                or provide loose unstructured LLM commentary prone to hallucinations. This project bridges that gap by
+                establishing a decoupled architecture where pure deterministic quantitative models (Historical VaR,
+                Sharpe Ratio, Beta) work in sync with Pinecone-backed Retrieval-Augmented Generation (RAG) news
+                pipelines and Google Gemini LLM reasoning.</p>
+
+            <h3>Core Engineering Achievements:</h3>
+            <ul>
+                <li><strong>Decoupled Multi-Agent Architecture:</strong> Designed an agentic orchestration layer using
+                    LangChain and FastAPI that coordinates specialized autonomous agents (Price, Risk, News RAG, Memory)
+                    to perform structured analysis workflows.</li>
+                <li><strong>Zero-LLM Deterministic Risk Engine:</strong> Implemented pure Python/Pandas mathematical
+                    modeling to compute 1-Day 95% Historical Value-at-Risk (VaR), annualized Sharpe Ratios, and Beta
+                    relative to the NIFTY 50 benchmark (^NSEI), guaranteeing 100% calculation accuracy without LLM
+                    hallucination risk.</li>
+                <li><strong>Grounded News RAG Intelligence:</strong> Built an automated vector ingestion pipeline using
+                    Pinecone vector database with ticker-level namespaces, parsing and embedding financial news to
+                    deliver grounded 2-3 sentence summaries cited with verifiable sources.</li>
+                <li><strong>Model-Agnostic LLM Factory & Session Memory:</strong> Created a flexible LLM provider
+                    factory supporting Google Gemini 2.5 Flash and Anthropic Claude, backed by SQLite conversational
+                    history tracking (SQLChatMessageHistory) to maintain context across multi-turn user interactions.
+                </li>
+                <li><strong>Production Web Dashboard:</strong> Developed a high-aesthetic, dark-themed Streamlit
+                    interactive UI featuring dynamic Plotly asset allocation donuts, VaR vs Beta risk scatter matrices,
+                    and INR currency formatting (₹ Rupees, Lakhs, Crores).</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Architecture Flow & Multi-Agent Grid -->
+    <section class="contributions-content-section">
+        <div class="container">
+            <h2 class="contributions-section-title">Orchestrated Multi-Agent Architecture</h2>
+
+            <p style="font-size: 16px; margin-bottom: 20px;">The platform operates as a collaborative multi-agent system
+                where tasks are delegated sequentially across dedicated tool specialists to deliver a unified,
+                structured risk report:</p>
+
+            <!-- Visual Flow Diagram -->
+            <div class="architecture-flow">
+                <div class="flow-stage">
+                    <div class="flow-icon"><i class="fas fa-chart-line"></i></div>
+                    <h4>1. Price Agent</h4>
+                    <p>yfinance Real-Time OHLCV & NSE Auto-Suffix</p>
+                </div>
+                <div class="flow-arrow"><i class="fas fa-arrow-right"></i></div>
+                <div class="flow-stage">
+                    <div class="flow-icon"><i class="fas fa-calculator"></i></div>
+                    <h4>2. Risk Agent</h4>
+                    <p>Historical VaR, Sharpe & NIFTY 50 Beta</p>
+                </div>
+                <div class="flow-arrow"><i class="fas fa-arrow-right"></i></div>
+                <div class="flow-stage">
+                    <div class="flow-icon"><i class="fas fa-newspaper"></i></div>
+                    <h4>3. News Agent</h4>
+                    <p>Pinecone Vector RAG Semantic Search</p>
+                </div>
+                <div class="flow-arrow"><i class="fas fa-arrow-right"></i></div>
+                <div class="flow-stage">
+                    <div class="flow-icon"><i class="fas fa-robot"></i></div>
+                    <h4>4. Orchestrator</h4>
+                    <p>Gemini LLM Synthesis & Alert Generation</p>
+                </div>
+            </div>
+
+            <!-- Detailed Explanation Grid -->
+            <div class="orchestration-grid">
+
+                <div class="orchestration-card">
+                    <h3><i class="fas fa-brain"></i> Orchestrator & LLM Factory</h3>
+                    <ul>
+                        <li><strong>Sequential Pipeline Control:</strong> Manages step-by-step tool execution, passing
+                            raw portfolio inputs to sub-agents before synthesizing final output payloads.</li>
+                        <li><strong>Model-Agnostic Engine:</strong> Dynamically loads LLMs via the LLM factory module.
+                            Configured at temperature=0 with strict Pydantic JSON schemas to guarantee predictable,
+                            structured responses.</li>
+                        <li><strong>Hybrid Failover System:</strong> Incorporates an automated rule-based risk scoring
+                            fallback algorithm ensuring continuous functionality even if LLM API
+                            limits occur.</li>
+                    </ul>
+                </div>
+
+                <div class="orchestration-card">
+                    <h3><i class="fas fa-shield-alt"></i> Quantitative Risk Agent</h3>
+                    <ul>
+                        <li><strong>Historical VaR (95%, 1-Day):</strong> Computes non-parametric 5th percentile daily
+                            log returns over 1-year historical prices to quantify max expected daily portfolio loss.
+                        </li>
+                        <li><strong>Risk-Adjusted Sharpe Ratio:</strong> Calculates annualized excess returns normalized
+                            against daily volatility benchmarked over 252 trading days.</li>
+                        <li><strong>Benchmark Beta Modeling:</strong> Measures systemic risk by calculating daily return
+                            covariance against the NIFTY 50 index (`^NSEI`).</li>
+                    </ul>
+                </div>
+
+                <div class="orchestration-card">
+                    <h3><i class="fas fa-search"></i> News RAG & Memory Agent</h3>
+                    <ul>
+                        <li><strong>Pinecone Vector Indexing:</strong> Queries ticker-specific namespaces to retrieve
+                            top-matching financial news excerpts matching stock performance queries.</li>
+                        <li><strong>Grounded Summarization:</strong> Uses a tightly constrained prompt to generate 2-3
+                            sentence summaries strictly bound to retrieved snippets without external speculation.</li>
+                        <li><strong>Conversational SQLite Memory:</strong> Persists user queries and AI recommendations
+                            via `SQLChatMessageHistory`, enabling multi-turn context retention.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Details & Stack -->
+    <section class="contributions-content-section">
+        <div class="container">
+            <h2 class="contributions-section-title">Technical Stack & Infrastructure</h2>
+            <p>Built using modern AI framework standards and robust Python libraries to ensure maximum reliability and
+                performance.</p>
+
+            <div class="tech-stack">
+                <div class="tech-item"><i class="fab fa-python"></i> Python 3.11</div>
+                <div class="tech-item"><i class="fas fa-cubes"></i> LangChain 0.3</div>
+                <div class="tech-item"><i class="fas fa-bolt"></i> FastAPI 0.115</div>
+                <div class="tech-item"><i class="fas fa-robot"></i> Google Gemini 2.5 Flash</div>
+                <div class="tech-item"><i class="fas fa-database"></i> Pinecone Vector DB</div>
+                <div class="tech-item"><i class="fas fa-chart-bar"></i> Streamlit & Plotly</div>
+                <div class="tech-item"><i class="fas fa-server"></i> yfinance & Pandas</div>
+                <div class="tech-item"><i class="fas fa-box"></i> SQLite Memory</div>
+                <div class="tech-item"><i class="fab fa-docker"></i> Docker & GitHub Actions</div>
+            </div>
+
+            <h3>Engineering Best Practices & DevOps Strategy:</h3>
+            <ul>
+                <li><strong>Strict Pydantic Validation:</strong> Enforces strong typing across REST API schemas
+                    (PortfolioRequest, HoldingRisk, RiskReport), mitigating runtime edge cases and invalid
+                    payloads.</li>
+                <li><strong>Automated CI Testing:</strong> Automated Pytest suites running in GitHub Actions to verify
+                    calculation accuracy for mathematical models across code pushes.</li>
+                <li><strong>Cold-Start Resiliency Loop:</strong> Streamlit frontend incorporates an automated HTTP ping
+                    retry mechanism to smoothly wake background API instances from serverless idle states.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Financial Engineering Models -->
+    <section class="contributions-content-section">
+        <div class="container">
+            <h2 class="contributions-section-title">Quantitative Financial Models</h2>
+
+            <div class="contributions-insights">
+                <div class="insight-item">
+                    <div class="insight-icon"><i class="fas fa-chart-line"></i></div>
+                    <div class="insight-content">
+                        <h3 class="insight-title">Historical Value-at-Risk (VaR)</h3>
+                        <p>Evaluates asset tail risk by computing daily log returns across 252 trading days.
+                            The 1-day 95% VaR identifies the threshold below which 95% of historical daily
+                            returns fall, representing the worst expected loss on a single trading day under normal
+                            market conditions.</p>
+                    </div>
+                </div>
+
+                <div class="insight-item">
+                    <div class="insight-icon"><i class="fas fa-balance-scale"></i></div>
+                    <div class="insight-content">
+                        <h3 class="insight-title">Annualized Sharpe Ratio</h3>
+                        <p>Quantifies risk-adjusted return by scaling average daily returns and standard deviation to
+                            annual equivalents using the square root of 252 trading days scaling factor. Higher positive
+                            scores indicate superior compensation per unit of total risk incurred.</p>
+                    </div>
+                </div>
+
+                <div class="insight-item">
+                    <div class="insight-icon"><i class="fas fa-globe"></i></div>
+                    <div class="insight-content">
+                        <h3 class="insight-title">Systemic Beta vs NIFTY 50</h3>
+                        <p>Calculates asset sensitivity relative to broader Indian market movements. A Beta greater than
+                            1.0 indicates higher volatility than NIFTY 50, whereas a Beta below 1.0 reflects a
+                            defensive asset with lower market sensitivity.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Working Model Section -->
+    <section class="contributions-content-section">
+        <div class="container">
+            <h2 class="contributions-section-title">Live Working Model</h2>
+            <p>The Agentic Portfolio Risk Advisor is fully deployed and publicly accessible. Try it live — enter any
+                NSE/BSE stock ticker and portfolio value to receive a real-time AI-generated risk report within seconds.</p>
+
+            <div class="demo-banner">
+                <h3>🤖 Try the Live Agent Now</h3>
+                <p>A dark-themed Streamlit dashboard powered by multi-agent LLMs, real-time market data, and
+                    Pinecone RAG news intelligence — running live on the cloud.</p>
+                <a href="https://riskanalysisagentgit-rgyctpx8pabuaxv9u5mrqx.streamlit.app/"
+                    class="demo-btn" target="_blank">
+                    <i class="fas fa-external-link-alt"></i> Launch Live Demo
+                </a>
+            </div>
+
+            <!-- Embedded Live App -->
+            <div class="demo-iframe-wrapper">
+                <div class="iframe-overlay-bar">
+                    <span><i class="fas fa-circle"></i> Live &mdash; Agentic Portfolio Risk Advisor</span>
+                    <a href="https://riskanalysisagentgit-rgyctpx8pabuaxv9u5mrqx.streamlit.app/"
+                        class="iframe-open-btn" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> Open in Full Screen
+                    </a>
+                </div>
+                <iframe
+                    src="https://riskanalysisagentgit-rgyctpx8pabuaxv9u5mrqx.streamlit.app/?embed=true"
+                    title="Agentic Portfolio Risk Advisor - Live Demo"
+                    allow="camera; microphone; fullscreen"
+                    loading="lazy">
+                </iframe>
+            </div>
+
+            <div class="demo-features">
+                <div class="demo-feature-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h4>Real-Time Prices</h4>
+                    <p>Live OHLCV data fetched via yfinance for NSE &amp; BSE stocks</p>
+                </div>
+                <div class="demo-feature-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h4>Risk Metrics</h4>
+                    <p>1-Day 95% VaR, annualized Sharpe Ratio, and NIFTY 50 Beta</p>
+                </div>
+                <div class="demo-feature-card">
+                    <i class="fas fa-newspaper"></i>
+                    <h4>RAG News Intelligence</h4>
+                    <p>Grounded financial news summaries pulled from Pinecone vector store</p>
+                </div>
+                <div class="demo-feature-card">
+                    <i class="fas fa-robot"></i>
+                    <h4>Gemini LLM Synthesis</h4>
+                    <p>AI-generated portfolio narrative combining all agent outputs into one report</p>
+                </div>
+                <div class="demo-feature-card">
+                    <i class="fas fa-comments"></i>
+                    <h4>Multi-Turn Memory</h4>
+                    <p>SQLite-backed conversation history for contextual follow-up queries</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- End-to-End Workflow Section -->
+    <section class="contributions-content-section">
+        <div class="container">
+            <h2 class="contributions-section-title">End-to-End Workflow</h2>
+            <p>From a single user input to a fully synthesized, AI-powered risk report — here is exactly how the system
+                processes each request across its multi-agent pipeline:</p>
+
+            <div class="workflow-steps">
+
+                <div class="workflow-step">
+                    <div class="step-number">1</div>
+                    <div class="step-body">
+                        <h4><i class="fas fa-keyboard"></i> User Input via Streamlit Dashboard</h4>
+                        <p>The user opens the dark-themed Streamlit UI and enters their portfolio details — one or more
+                            NSE/BSE stock tickers (e.g., RELIANCE, TCS) along with the invested value (in INR) for each
+                            holding.</p>
+                        <ul>
+                            <li>Tickers are auto-validated and NSE symbols are automatically suffixed with <strong>.NS</strong> for yfinance compatibility</li>
+                            <li>A cold-start HTTP ping loop wakes the FastAPI backend if idle on a serverless instance</li>
+                            <li>The request is serialized into a structured JSON payload and sent to the FastAPI endpoint</li>
+                        </ul>
+                        <span class="step-tag">Streamlit UI &rarr; FastAPI REST API</span>
+                    </div>
+                </div>
+
+                <div class="workflow-step">
+                    <div class="step-number">2</div>
+                    <div class="step-body">
+                        <h4><i class="fas fa-chart-line"></i> Price Agent — Real-Time Market Data Fetch</h4>
+                        <p>The <strong>Price Agent</strong> is the first tool invoked by the Orchestrator. It calls yfinance
+                            to download 1 year of OHLCV (Open, High, Low, Close, Volume) historical price data for each
+                            submitted ticker.</p>
+                        <ul>
+                            <li>Validates that all tickers return non-empty data — missing tickers are flagged as errors</li>
+                            <li>Computes the current market price and calculates each holding's current INR market value</li>
+                            <li>Returns a structured payload containing prices and portfolio valuations per stock</li>
+                        </ul>
+                        <span class="step-tag">yfinance API &rarr; OHLCV DataFrame</span>
+                    </div>
+                </div>
+
+                <div class="workflow-step">
+                    <div class="step-number">3</div>
+                    <div class="step-body">
+                        <h4><i class="fas fa-calculator"></i> Risk Agent — Quantitative Risk Modeling</h4>
+                        <p>The <strong>Risk Agent</strong> receives the historical price data and runs three pure
+                            Python/Pandas deterministic financial models — with zero LLM involvement to guarantee
+                            mathematical accuracy.</p>
+                        <ul>
+                            <li><strong>Historical VaR (95%, 1-Day):</strong> Computes daily log returns, then takes the 5th percentile as the worst-case daily loss threshold</li>
+                            <li><strong>Annualized Sharpe Ratio:</strong> Scales mean daily return and daily volatility to annual equivalents using the square root of 252 trading days</li>
+                            <li><strong>Beta vs NIFTY 50:</strong> Downloads NIFTY 50 (^NSEI) data and calculates the covariance of stock returns against index returns to measure market sensitivity</li>
+                        </ul>
+                        <span class="step-tag">Pandas NumPy Math &rarr; Risk Report per Ticker</span>
+                    </div>
+                </div>
+
+                <div class="workflow-step">
+                    <div class="step-number">4</div>
+                    <div class="step-body">
+                        <h4><i class="fas fa-newspaper"></i> News RAG Agent — Pinecone Vector Intelligence</h4>
+                        <p>The <strong>News Agent</strong> queries a Pinecone vector database for each ticker to retrieve
+                            semantically relevant recent financial news — grounding the LLM's output in verifiable
+                            real-world events.</p>
+                        <ul>
+                            <li>Each ticker has its own namespace in Pinecone, pre-populated with embedded financial news articles</li>
+                            <li>A semantic similarity search retrieves the top matching news excerpts for the stock's performance context</li>
+                            <li>A tightly constrained prompt instructs the LLM to generate a 2–3 sentence summary strictly from retrieved snippets — no hallucination</li>
+                            <li>Source citations are included with every news summary for verifiability</li>
+                        </ul>
+                        <span class="step-tag">Pinecone Vector DB &rarr; Grounded News Summaries</span>
+                    </div>
+                </div>
+
+                <div class="workflow-step">
+                    <div class="step-number">5</div>
+                    <div class="step-body">
+                        <h4><i class="fas fa-robot"></i> Orchestrator — Gemini LLM Synthesis</h4>
+                        <p>The <strong>Orchestrator</strong> collects all outputs from the Price, Risk, and News agents
+                            and passes them to <strong>Google Gemini 2.5 Flash</strong> for final synthesis.</p>
+                        <ul>
+                            <li>Gemini is configured at temperature=0 with a strict Pydantic schema to produce a structured, predictable JSON report</li>
+                            <li>It generates an overall portfolio risk classification (Low / Medium / High), a narrative summary, and per-stock insights</li>
+                            <li>A rule-based fallback algorithm automatically classifies risk if the LLM API quota is exceeded</li>
+                            <li>Conversation history is persisted in SQLite so users can ask follow-up questions in the same session</li>
+                        </ul>
+                        <span class="step-tag">Gemini LLM &rarr; Structured Risk Report JSON</span>
+                    </div>
+                </div>
+
+                <div class="workflow-step">
+                    <div class="step-number">6</div>
+                    <div class="step-body">
+                        <h4><i class="fas fa-desktop"></i> Dashboard Rendering — Visual Output</h4>
+                        <p>The structured risk report JSON is returned to the Streamlit frontend and rendered as an
+                            interactive, dark-themed dashboard with rich data visualizations.</p>
+                        <ul>
+                            <li><strong>Asset Allocation Donut Chart:</strong> Portfolio distribution by market value in INR</li>
+                            <li><strong>VaR vs Beta Scatter Matrix:</strong> Plotly scatter plot mapping each stock's daily risk against market sensitivity</li>
+                            <li><strong>Risk Classification Badges:</strong> Color-coded Low / Medium / High risk labels per holding</li>
+                            <li><strong>AI Narrative Panel:</strong> Full Gemini-generated portfolio commentary displayed alongside quantitative metrics</li>
+                            <li><strong>News Intelligence Panel:</strong> Per-stock grounded news summaries with source links</li>
+                        </ul>
+                        <span class="step-tag">Plotly Charts &rarr; Streamlit Dark Dashboard</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Navigation Bar -->
+    <div class="container">
+        <div class="contributions-nav">
+            <a href="pandas-contri.html" class="nav-btn">
+                <i class="fas fa-arrow-left"></i>
+                Previous Project
+            </a>
+            <a href="index.html#projects" class="nav-btn">
+                <i class="fas fa-th"></i>
+                All Projects
+            </a>
+            <a href="zomato-project.html" class="nav-btn">
+                Next Project
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">Manjunath L</div>
+                    <p>Data Analyst | Azure Certified | Machine Learning Enthusiast</p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/manjunath-l-4771a6202/" target="_blank"><i
+                                class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/Manju080" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="mailto:manjutejas188@gmail.com"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html#about">About Me</a></li>
+                        <li><a href="index.html#skills">My Skills</a></li>
+                        <li><a href="index.html#experience">Experience</a></li>
+                        <li><a href="index.html#projects">Projects</a></li>
+                        <li><a href="mailto:manjutejas188@gmail.com">Contact Me</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Bangalore, India</li>
+                        <li><i class="fas fa-phone"></i> +918073090980</li>
+                        <li><i class="fas fa-envelope"></i> manjutejas188@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                © 2026 Manjunath L. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
